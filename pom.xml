@@ -12,12 +12,21 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
+	<repositories>
+		<repository>
+			<id>jboss</id>
+			<url>https://repository.jboss.org/nexus/content/repositories/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+	</repositories>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.igniterealtime.openfire</groupId>
+				<groupId>org.igniterealtime</groupId>
 				<artifactId>openfire</artifactId>
-				<version>3.7.0</version>
+				<version>3.6.4</version>
 			</dependency>
 			<dependency>
 				<groupId>junit</groupId>
@@ -59,7 +68,7 @@
 	<dependencies>
 		<!-- A P P L I C A T I O N D E P E N D E N C I E S -->
 		<dependency>
-			<groupId>org.igniterealtime.openfire</groupId>
+			<groupId>org.igniterealtime</groupId>
 			<artifactId>openfire</artifactId>
 			<scope>provided</scope>
 		</dependency>
