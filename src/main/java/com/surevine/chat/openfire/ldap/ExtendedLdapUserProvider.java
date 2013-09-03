@@ -15,7 +15,7 @@
  * Copyright (C) 2004-2008 Jive Software. All rights reserved.
  * 
  * This was modified by Surevine Ltd.
- * All modifications are (C) 2011-2013 Surevine Ltd.
+ * All modifications are (C) 2011 Surevine Ltd.
  */
 
 package com.surevine.chat.openfire.ldap;
@@ -78,8 +78,7 @@ public class ExtendedLdapUserProvider implements UserProvider
             .getLogger(LdapUserProvider.class);
 
     // LDAP date format parser.
-    private static SimpleDateFormat ldapDateFormat = new SimpleDateFormat(
-            "yyyyMMddHHmmss");
+    private static String LDAP_DATE_FORMAT_STRING = "yyyyMMddHHmmss";
 
     /**
      * This is the ldap user provider which will be used to delegate calls to.
@@ -456,6 +455,8 @@ public class ExtendedLdapUserProvider implements UserProvider
         }
         Date date = new Date();
         try {
+        	final SimpleDateFormat ldapDateFormat = new SimpleDateFormat(
+                    LDAP_DATE_FORMAT_STRING);
             if (useUTC) {
                 ldapDateFormat.setTimeZone(TimeZone.getTimeZone("UTC"));
             } else {
